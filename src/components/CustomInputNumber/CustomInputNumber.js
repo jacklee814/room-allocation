@@ -106,7 +106,7 @@ const useCustomerInput = ({
 
   const handleDecrement = () => {
     if (decrementDisabled) return;
-    setValue((prev) => prev - 1);
+    setValue((prev) => (prev - step < 0 ? prev : prev - step));
     onChange({ name, target: { value: countRef.current } });
   };
 
@@ -131,7 +131,7 @@ const useCustomerInput = ({
 
   const handleIncrement = () => {
     if (incrementDisabled) return;
-    setValue((prev) => prev + 1);
+    setValue((prev) => (prev + step > max ? prev : prev + step));
     onChange({ name, target: { value: countRef.current } });
   };
 
