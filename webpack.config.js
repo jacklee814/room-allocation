@@ -46,6 +46,7 @@ module.exports = {
   },
   optimization: { minimize: isProduction, minimizer: [new TerserPlugin()] },
   devServer: {
+    port: 3000,
     open: true,
     compress: true,
   },
